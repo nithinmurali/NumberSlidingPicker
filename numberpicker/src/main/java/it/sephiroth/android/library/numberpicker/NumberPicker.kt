@@ -328,15 +328,15 @@ class NumberPicker @JvmOverloads constructor(
             }
         }
 
-//        editText.doOnTextChanged { text, _, _, _ ->
-//            if (!text.isNullOrEmpty()) {
-//                try {
-//                    this.setProgress(Integer.valueOf(text.toString()))
-//                } catch (e: NumberFormatException) {
-//                    Timber.e(e)
-//                }
-//            }
-//        }
+       editText.doOnTextChanged { text, _, _, _ ->
+           if (!text.isNullOrEmpty()) {
+               try {
+                   this.setProgress(Integer.valueOf(text.toString()))
+               } catch (e: NumberFormatException) {
+                   Timber.e(e)
+               }
+           }
+       }
 
         editText.setOnFocusChangeListener { _, hasFocus ->
             setBackgroundFocused(hasFocus)
